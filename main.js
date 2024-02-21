@@ -22,7 +22,7 @@ getSynonymsBtn.addEventListener('click', async () => {
       },
       {
         "role": "user",
-        "content": "Give me 3 synonyms for this word: " + sourceText
+        "content": "Give me 3 synonyms for this word, listed in one sentence, seperated by commas: " + sourceText
       }
     ],
     temperature: 1,
