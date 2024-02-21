@@ -1,0 +1,66 @@
+body {
+  margin: 0;
+  background-color: #27887D;
+  font-family: "Irish Grover", system-ui;
+  padding: 1.875rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh;
+}
+
+.part {
+  background-color: #D9D9D9;
+  color: #27887D;
+  padding: 1rem;
+  text-align: center;
+  border: none;
+  width: 100%;
+}
+
+header {
+  font-size: 1.5rem;
+
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+}
+
+.textarea {
+  text-align: left;
+  font-size: 1.2rem;
+  font-family: "Irish Grover", system-ui;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+button {
+  font-family: "Irish Grover", system-ui;
+  font-size: 1.4rem;
+  flex-grow: 2;
+  flex-shrink: 0;
+  flex-basis: auto;
+  width: auto;
+}
+
+.colors {
+  background-color: #D9D9D9;
+  color: #27887D;
+  padding: 1rem;
+  text-align: center;
+  border: none;
+}

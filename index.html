@@ -1,13 +1,32 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/main.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synonym Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container">
+    <header class="part">
+      Synonym Generator
+    </header>
+    <main>
+      <textarea class="part textarea" name="source-text" id="source-text" rows="2">Smart</textarea>
+      <div class="buttons">
+        <button class="colors">Get Synonym</button>
+        <button class="colors">Clear</button>
+      </div>
+      <textarea class="part textarea" name="synonym-text" id="synonym-text" rows="4">Brilliant</textarea>
+    </main>
+  </div>
+  <script type="module" src="/main.js"></script>
+</body>
+
 </html>
