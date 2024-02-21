@@ -34,3 +34,8 @@ getSynonymsBtn.addEventListener('click', async () => {
 
   synonymTextArea.value = response.choices[0].message.content
 })
+
+clearBtn.addEventListener('click' , () => {
+  sourceTextArea.value = ''
+  synonymTextArea.value = ''
+})
