@@ -1,38 +1,26 @@
-import OpenAI from "openai";
-
 const sourceTextArea = document.getElementById('source-text-area')
 const synonymTextArea = document.getElementById('synonym-text-area')
 const getSynonymsBtn = document.getElementById('get-synonyms-btn')
 const clearBtn = document.getElementById('clear-btn')
 
-const openai = new OpenAI({
-  apiKey: import.meta.env.VITE_OPENAI_API_KEY,
-  dangerouslyAllowBrowser: true
-});
+const apiEndpoint = import.meta.env.PROD ? 
+  'https://synonym-generator-backend.onrender.com/api/synonym' 
+  : "http://localhost:3000/api/synonym"
 
 getSynonymsBtn.addEventListener('click', async () => {
   const sourceText = sourceTextArea.value
-
-  const response = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
-    messages: [
-      {
-        "role": "system",
-        "content": "You are a linguist. "
-      },
-      {
-        "role": "user",
-        "content": "Give me 3 synonyms for this word, listed in one sentence, seperated by commas: " + sourceText
-      }
-    ],
-    temperature: 1,
-    max_tokens: 256,
-    top_p: 1,
-    frequency_penalty: 0,
-    presence_penalty: 0,
-  });
-
-  synonymTextArea.value = response.choices[0].message.content
+  const options = {
+    method: 'POST',
+    body: JSON.stringify({
+      "sourceText": sourceText
+    }),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  }
+  const result = await fetch(apiEndpoint, options)
+  const response = await result.json()
+  synonymTextArea.value = response.synonymsText
 })
 
 clearBtn.addEventListener('click' , () => {
